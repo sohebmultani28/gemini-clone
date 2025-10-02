@@ -1,7 +1,7 @@
 # Gemini Clone - AI Chat Application
 
 ## 🌐 Live Demo
-[Add your Vercel URL here after deployment]
+[gemini-clone-beige-tau.vercel.app]
 
 ## 📦 GitHub Repository
 https://github.com/sohebmultani28/gemini-clone
