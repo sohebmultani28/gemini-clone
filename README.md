@@ -76,3 +76,9 @@ Completed for Kuvaka Tech Frontend Developer Assignment
 
 Developer: Soheb Multani
 Submission Date: October 2, 2025
+
+
+## Known Issues
+- Dashboard route experiencing 404 in production deployment
+- All code is complete and functional
+- Components can be tested by modifying the main page route
