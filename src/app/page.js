@@ -1,39 +1,17 @@
 'use client';
 
-import { useState } from 'react';
-import LoginForm from '@/components/auth/LoginForm';
-import OTPInput from '@/components/auth/OTPInput';
+import Navbar from '@/components/common/Navbar';
+import ChatroomList from '@/components/dashboard/ChatroomList';
 
 export default function Home() {
-  const [step, setStep] = useState('login');
-  const [phoneData, setPhoneData] = useState({ countryCode: '', phoneNumber: '' });
-
-  const handleOTPSent = (countryCode, phoneNumber) => {
-    setPhoneData({ countryCode, phoneNumber });
-    setStep('otp');
-  };
-
-  const handleOTPVerified = () => {
-    // Direct redirect without auth check for now
-    window.location.href = '/dashboard';
-  };
-
-  const handleBackToLogin = () => {
-    setStep('login');
-  };
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 flex items-center justify-center p-4">
-      {step === 'login' ? (
-        <LoginForm onOTPSent={handleOTPSent} />
-      ) : (
-        <OTPInput
-          phoneNumber={phoneData.phoneNumber}
-          countryCode={phoneData.countryCode}
-          onVerify={handleOTPVerified}
-          onBack={handleBackToLogin}
-        />
-      )}
+    <div className="h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
+      <Navbar />
+      <div className="flex-1 overflow-hidden">
+        <div className="max-w-4xl mx-auto h-full">
+          <ChatroomList />
+        </div>
+      </div>
     </div>
   );
 }
